@@ -1,0 +1,13 @@
+.screenHairImage {
+  position: fixed;
+  z-index: 100000;
+  pointer-events: none;
+  
+  -webkit-animation: fadein 2s;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
