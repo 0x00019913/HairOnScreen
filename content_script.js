@@ -23,7 +23,7 @@ render();
 function render() {
   // get the number of images in the global store
   chrome.storage.sync.get("numHairImages", function(items) {
-    var numHairImages = 2;
+    var numHairImages = 1;
     if (items.hasOwnProperty("numHairImages")) {
       numHairImages = items.numHairImages;
     }
@@ -71,13 +71,6 @@ function insertImages(numHairImages) {
   });
 }
 
-function removeImages() {
-  var images = document.getElementsByClassName("screenHairImage");
-  for (var i = images.length-1; i >= 0; i--) {
-    document.body.removeChild(images[i]);
-  }
-}
-
 function randomOffset() {
   var leftOffset = Math.round(Math.random() * (window.screen.width - w));
   var topOffset = Math.round(Math.random() * (window.screen.height - h));
@@ -96,4 +89,16 @@ function constructImageObject() {
     topOffset: offset[1],
     url: randomImage()
   };
+}
+
+// debugging function
+function resetStoreVariables() {
+  chrome.storage.sync.remove(["numHairImages", "hairImages"], function() {
+    chrome.storage.sync.get("numHairImages", function(items) {
+      console.log(items);
+    });
+    chrome.storage.sync.get("hairImages", function(items) {
+      console.log(items);
+    });
+  });
 }
