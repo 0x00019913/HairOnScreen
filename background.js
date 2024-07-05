@@ -6,33 +6,33 @@ chrome.storage.sync.get("numHairImages", function(items) {
   chrome.contextMenus.create({
     title: hairCountText(hairCount),
     id: "hair_count",
-    contexts: ["browser_action"],
+    contexts: ["action"],
     enabled: false
   });
   chrome.contextMenus.create({
     title: "More hair!",
     id: "more_hair",
-    contexts: ["browser_action"]
+    contexts: ["action"]
   });
   chrome.contextMenus.create({
     title: "Less hair!",
     id: "less_hair",
-    contexts: ["browser_action"]
+    contexts: ["action"]
   });
   chrome.contextMenus.create({
     title: "Reset hair!",
     id: "reset_hair",
-    contexts: ["browser_action"]
+    contexts: ["action"]
   });
   chrome.contextMenus.create({
     title: "Randomize hair!",
     id: "randomize_hair",
-    contexts: ["browser_action"]
+    contexts: ["action"]
   });
   chrome.contextMenus.create({
     title: "(reload after updating)",
     id: "reload_prompt",
-    contexts: ["browser_action"],
+    contexts: ["action"],
     enabled: false
   });
 });
