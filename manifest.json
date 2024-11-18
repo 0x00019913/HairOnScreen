@@ -3,7 +3,7 @@
   "name": "Hair on Screen",
   "description": "Displays a helpful hair on the screen",
   "version": "0.0.0.2",
-  "author": "Anton Bovin",
+  "author": "Anton Bovin | Ported to MV3 by ZenithKnight",
   "action": {
     "default_icon": "assets/icons/icon128.png"
   },
